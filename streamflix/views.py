@@ -1,4 +1,4 @@
-# # Views construidas com APIView
+# # CRUD com APIView
 
 # from rest_framework import status, serializers, generics, filters
 # from rest_framework.views import APIView
@@ -124,7 +124,7 @@
 #             status=status.HTTP_204_NO_CONTENT
 #         )
 
-# ================= Views usando generics
+# ================= CRUD com generics
 
 from rest_framework import status, generics, filters
 from rest_framework.response import Response
@@ -151,11 +151,11 @@ class VideoList(generics.ListCreateAPIView):
     serializer_class = VideoSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     search_fields = ['title']
-        
+       
 class VideoDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Video.objects.all()
     serializer_class = VideoSerializer
-    
+  
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
         self.perform_destroy(instance)

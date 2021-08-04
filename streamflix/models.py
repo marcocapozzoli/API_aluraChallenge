@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models.expressions import F
-
    
 class Categoria(models.Model):
     
