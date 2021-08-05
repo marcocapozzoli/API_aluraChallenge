@@ -1,17 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
 
-from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from streamflix import views
-
-# Rota Principal
-#router = routers.DefaultRouter()
-
-# Rotas secundárias
-#router.register('videos', VideoViewSet, basename='videos')
-#router.register('videos/<int:pk>', VideoIdViewSet, basename='videosid')
 
 urlpatterns = [
     path('', views.api_root),
