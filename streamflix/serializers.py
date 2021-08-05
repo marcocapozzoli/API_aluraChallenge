@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from django.utils.timezone import now
 
-from streamflix.validators import *
 from streamflix.models import Video, Categoria
 
 
